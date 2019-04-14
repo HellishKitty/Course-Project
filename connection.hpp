@@ -13,7 +13,7 @@ class connection final
 	database_exception last_error_;
 	bool okay_;
 
-	static int default_callback(void *not_used, int argc, char **argv, char **columns);
+	static int default_callback(void *not_used, int argc, char **argv, char **columns) { return 0; }
 
 	void raise_error(const int& code, const std::string& message);
 
@@ -29,6 +29,6 @@ public:
 	int get_last_error_code() const;
 	std::string get_last_error_message() const;
 
-	connection(const std::string& file_name);
+	explicit connection(const std::string& file_name);
 	~connection();
 };
