@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="connection.cpp" />
     <ClCompile Include="database_exception.cpp" />
+    <ClCompile Include="logging.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="order.cpp" />
     <ClCompile Include="sqlite3.c" />
@@ -133,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="connection.hpp" />
     <ClInclude Include="database_exception.hpp" />
+    <ClInclude Include="logging.hpp" />
     <ClInclude Include="order.hpp" />
     <ClInclude Include="sqlite3.h" />
     <ClInclude Include="user.hpp" />

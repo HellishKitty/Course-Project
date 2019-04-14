@@ -21,6 +21,12 @@
     <Filter Include="Source Files\Controller">
       <UniqueIdentifier>{5117540e-eebe-4d4e-87bc-ddd52282c77c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Controller\Database">
+      <UniqueIdentifier>{bac7acba-cc11-48e2-af9c-eaf364ce300a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\Database">
+      <UniqueIdentifier>{ce327039-ad0a-407d-9d0d-3bf96d0bb947}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,13 +38,16 @@
     <ClCompile Include="user.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="sqlite3.c">
-      <Filter>Source Files\Controller</Filter>
-    </ClCompile>
     <ClCompile Include="connection.cpp">
-      <Filter>Source Files\Controller</Filter>
+      <Filter>Source Files\Controller\Database</Filter>
     </ClCompile>
     <ClCompile Include="database_exception.cpp">
+      <Filter>Source Files\Controller\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite3.c">
+      <Filter>Source Files\Controller\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="logging.cpp">
       <Filter>Source Files\Controller</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,13 +58,16 @@
     <ClInclude Include="order.hpp">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
-    <ClInclude Include="sqlite3.h">
-      <Filter>Header Files\Controller</Filter>
-    </ClInclude>
     <ClInclude Include="connection.hpp">
-      <Filter>Header Files\Controller</Filter>
+      <Filter>Header Files\Controller\Database</Filter>
     </ClInclude>
     <ClInclude Include="database_exception.hpp">
+      <Filter>Header Files\Controller\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite3.h">
+      <Filter>Header Files\Controller\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="logging.hpp">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
   </ItemGroup>
