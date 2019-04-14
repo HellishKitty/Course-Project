@@ -39,7 +39,7 @@ int connection::execute(const std::string& SQLtext, void* fetch_here, callback f
 {
 	char* error_message = nullptr;
 	open();
-	auto response = sqlite3_exec(data_base_, SQLtext.c_str(), default_callback, fetch_here, &error_message);
+	auto response = sqlite3_exec(data_base_, SQLtext.c_str(), func, fetch_here, &error_message);
 	close();
 	if (error_message != nullptr)
 		raise_error(response, error_message);
