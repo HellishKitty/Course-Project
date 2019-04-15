@@ -36,6 +36,7 @@ public:
 	static std::map<int, std::string> role_map;
 
 	credentials get_credential() const { return credentials_; }
+	std::string get_login() const { return logging_.login; }
 	void set_orders(std::vector<std::shared_ptr<order>>& orders) { orders_ = orders; }
 	void print_orders();
 
