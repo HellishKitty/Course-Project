@@ -23,13 +23,13 @@ struct order_info
 
 class order final
 {
-	user driver_;
-	user passenger_;
+	credentials driver_;
+	credentials passenger_;
 	order_info info_;
 
 public:
 	
-	order(const user& driver, const user& passenger, const order_info& info);
+	order(const credentials& driver, const credentials& passenger, const order_info& info);
 	~order() = default;
 	friend std::ostream& operator<< (std::ostream& stream, const order& out);
 };
