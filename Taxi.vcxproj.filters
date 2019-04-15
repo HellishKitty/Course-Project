@@ -50,6 +50,12 @@
     <ClCompile Include="logging.cpp">
       <Filter>Source Files\Controller</Filter>
     </ClCompile>
+    <ClCompile Include="passenger.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="passenger_exception.cpp">
+      <Filter>Source Files\Controller</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="user.hpp">
@@ -68,6 +74,12 @@
       <Filter>Header Files\Controller\Database</Filter>
     </ClInclude>
     <ClInclude Include="logging.hpp">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="passenger.hpp">
+      <Filter>Header Files\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="passenger_exception.hpp">
       <Filter>Header Files\Controller</Filter>
     </ClInclude>
   </ItemGroup>
