@@ -123,19 +123,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="admin.cpp" />
     <ClCompile Include="connection.cpp" />
     <ClCompile Include="database_exception.cpp" />
     <ClCompile Include="logging.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="order.cpp" />
+    <ClCompile Include="passenger_options.cpp" />
+    <ClCompile Include="user_options.cpp" />
+    <ClCompile Include="options_exception.cpp" />
     <ClCompile Include="sqlite3.c" />
     <ClCompile Include="user.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="admin.hpp" />
     <ClInclude Include="connection.hpp" />
     <ClInclude Include="database_exception.hpp" />
     <ClInclude Include="logging.hpp" />
     <ClInclude Include="order.hpp" />
+    <ClInclude Include="passenger_options.hpp" />
+    <ClInclude Include="user_options.hpp" />
+    <ClInclude Include="options_exception.hpp" />
     <ClInclude Include="sqlite3.h" />
     <ClInclude Include="user.hpp" />
   </ItemGroup>

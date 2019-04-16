@@ -27,6 +27,12 @@
     <Filter Include="Source Files\Controller\Database">
       <UniqueIdentifier>{ce327039-ad0a-407d-9d0d-3bf96d0bb947}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Controller\Options">
+      <UniqueIdentifier>{335c705f-4dd4-40f1-aa77-d3cfb7590139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\Options">
+      <UniqueIdentifier>{8cf67714-d67a-491f-ba8b-f71d26c0544f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,7 +54,19 @@
       <Filter>Source Files\Controller\Database</Filter>
     </ClCompile>
     <ClCompile Include="logging.cpp">
-      <Filter>Source Files\Controller</Filter>
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="admin.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="options_exception.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="user_options.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="passenger_options.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +86,19 @@
       <Filter>Header Files\Controller\Database</Filter>
     </ClInclude>
     <ClInclude Include="logging.hpp">
-      <Filter>Header Files\Controller</Filter>
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="admin.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="options_exception.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="user_options.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="passenger_options.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
