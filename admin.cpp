@@ -2,6 +2,7 @@
 #include "connection.hpp"
 #include <iostream>
 #include <fstream>
+#include "options_exception.hpp"
 
 
 void admin_options::add_user()
@@ -221,12 +222,12 @@ void admin_options::load_request()
 }
 
 std::string admin_options::load_from_file()
-{
-	std::ifstream file;
+{	
 	std::string request; 
-	file.open(ask_file_name());
+	std::string filename = ask_file_name();
+	std::ifstream file(filename);
 	if (!file.is_open())
-		std::cout << "Debug" << std::endl;
+		throw bad_file(filename);
 	std::getline(file, request);
 	return request;
 }

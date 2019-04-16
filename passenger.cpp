@@ -1,6 +1,6 @@
 #include "passenger.hpp"
 #include <iostream>
-#include "passenger_exception.hpp"
+#include "options_exception.hpp"
 #include "connection.hpp"
 #define RAND_MAX 10
 
