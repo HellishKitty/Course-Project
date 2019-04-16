@@ -62,6 +62,9 @@
     <ClCompile Include="passenger_exception.cpp">
       <Filter>Source Files\Controller\Options</Filter>
     </ClCompile>
+    <ClCompile Include="admin.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="user.hpp">
@@ -86,6 +89,9 @@
       <Filter>Header Files\Controller\Options</Filter>
     </ClInclude>
     <ClInclude Include="passenger_exception.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="admin.hpp">
       <Filter>Header Files\Controller\Options</Filter>
     </ClInclude>
   </ItemGroup>
