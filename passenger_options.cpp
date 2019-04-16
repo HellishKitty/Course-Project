@@ -46,7 +46,7 @@ bool passenger_options::ask_commit(const order_info& info, const user& driver)
 	std::string commit = "null";
 	print_order_info(info, driver);
 	while (commit_options.count(commit) == 0) {
-		std::cout << "1) Commit || 2) Decline\nInput> ";
+		std::cout << "1) Commit || 0) Decline\nInput> ";
 		std::getline(std::cin, commit, '\n');
 	}
 	return commit_options[commit];
@@ -88,7 +88,7 @@ user passenger_options::pick_driver()
 
 int passenger_options::generate_cost()
 {
-	return std::rand() + 5;
+	return 5 + std::rand();
 }
 
 int passenger_options::generate_id()

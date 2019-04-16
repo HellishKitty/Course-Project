@@ -129,8 +129,9 @@
     <ClCompile Include="logging.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="order.cpp" />
-    <ClCompile Include="passenger.cpp" />
-    <ClCompile Include="passenger_exception.cpp" />
+    <ClCompile Include="passenger_options.cpp" />
+    <ClCompile Include="user_options.cpp" />
+    <ClCompile Include="options_exception.cpp" />
     <ClCompile Include="sqlite3.c" />
     <ClCompile Include="user.cpp" />
   </ItemGroup>
@@ -140,8 +141,9 @@
     <ClInclude Include="database_exception.hpp" />
     <ClInclude Include="logging.hpp" />
     <ClInclude Include="order.hpp" />
-    <ClInclude Include="passenger.hpp" />
-    <ClInclude Include="passenger_exception.hpp" />
+    <ClInclude Include="passenger_options.hpp" />
+    <ClInclude Include="user_options.hpp" />
+    <ClInclude Include="options_exception.hpp" />
     <ClInclude Include="sqlite3.h" />
     <ClInclude Include="user.hpp" />
   </ItemGroup>

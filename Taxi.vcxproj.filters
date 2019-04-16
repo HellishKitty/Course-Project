@@ -56,13 +56,16 @@
     <ClCompile Include="logging.cpp">
       <Filter>Source Files\Controller\Options</Filter>
     </ClCompile>
-    <ClCompile Include="passenger.cpp">
-      <Filter>Source Files\Controller\Options</Filter>
-    </ClCompile>
-    <ClCompile Include="passenger_exception.cpp">
-      <Filter>Source Files\Controller\Options</Filter>
-    </ClCompile>
     <ClCompile Include="admin.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="options_exception.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="user_options.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="passenger_options.cpp">
       <Filter>Source Files\Controller\Options</Filter>
     </ClCompile>
   </ItemGroup>
@@ -85,13 +88,16 @@
     <ClInclude Include="logging.hpp">
       <Filter>Header Files\Controller\Options</Filter>
     </ClInclude>
-    <ClInclude Include="passenger.hpp">
-      <Filter>Header Files\Controller\Options</Filter>
-    </ClInclude>
-    <ClInclude Include="passenger_exception.hpp">
-      <Filter>Header Files\Controller\Options</Filter>
-    </ClInclude>
     <ClInclude Include="admin.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="options_exception.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="user_options.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="passenger_options.hpp">
       <Filter>Header Files\Controller\Options</Filter>
     </ClInclude>
   </ItemGroup>
