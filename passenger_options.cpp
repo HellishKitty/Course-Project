@@ -1,49 +1,11 @@
-#include "passenger.hpp"
-#include <iostream>
-#include "options_exception.hpp"
+#include "passenger_options.hpp"
 #include "connection.hpp"
+#include "options_exception.hpp"
+#include <iostream>
 #define RAND_MAX 10
 
-int passenger::max_ID_ = 0;
-std::vector<user> passenger::callback_drivers_;
-
-void passenger_options::edit_credentials(const std::string& login)
-{
-	auto credits = ask_new_credentials();
-	auto SQLtext = form_update_credits(credits, login);
-	update(SQLtext);
-}
-
-credentials passenger_options::ask_new_credentials()
-{
-	credentials credits;
-	std::cout << "Enter name: ";
-	std::getline(std::cin, credits.name, '\n');
-	std::cout << "Enter surname: ";
-	std::getline(std::cin, credits.surname, '\n');
-	return credits;
-}
-
-void passenger_options::update(const std::string& SQLtext)
-{
-	connection conn("Taxi.sqlite3");
-	conn.execute(SQLtext);
-}
-
-void passenger_options::change_password(const std::string& login)
-{
-	auto password = ask_new_password();
-	auto SQLtext = form_update_password(password, login);
-	update(SQLtext);
-}
-
-std::string passenger_options::ask_new_password()
-{
-	std::string password;
-	std::cout << "Enter new password: ";
-	std::getline(std::cin, password, '\n');
-	return password;
-}
+int passenger_options::max_ID_ = 0;
+std::vector<user> passenger_options::callback_drivers_;
 
 void passenger_options::order_taxi(const std::string& login)
 {
@@ -139,16 +101,6 @@ int passenger_options::generate_id()
 	return max_ID_ + 1;
 }
 
-std::string passenger_options::form_update_credits(const credentials& credits, const std::string& login)
-{
-	return "UPDATE users SET name = '" + credits.name + "', surname = '" + credits.surname + "' WHERE login = '" + login + "'";
-}
-
-std::basic_string<char> passenger_options::form_update_password(const std::basic_string<char>& password, const std::basic_string<char>& login)
-{
-	return "UPDATE users SET password = '" + password + "' WHERE login = '" + login + "'";
-}
-
 std::string passenger_options::form_max_id_req()
 {
 	return "SELECT MAX(id) FROM orders";	
@@ -163,6 +115,11 @@ std::string passenger_options::form_commit(const order_info& info, const std::st
 {
 	return "INSERT INTO orders VALUES (" + std::to_string(info.order_id) + ", '" + driver + "', '" + passenger + "', '"\
 			+ info.from_address + "', '" + info.to_address + "', " + std::to_string(info.status) + ")";
+}
+
+std::string passenger_options::form_select_orders(const std::string& login)
+{
+	return "SELECT * FROM orders WHERE login = '" + login + "'";
 }
 
 int passenger_options::max_id_callback(void* not_used, int count, char** value, char** column_name)
@@ -183,7 +140,17 @@ int passenger_options::select_drivers_callback(void* not_used, int count, char**
 	return 0;
 }
 
-std::map<std::string, bool> passenger::commit_options = {
+int passenger_options::select_orders_callback(void* not_used, int count, char** value, char** column_name)
+{
+	std::cout << "-------------------------" << std::endl;
+    for (auto i = 0; i < count; i++) {    
+    	std::cout << column_name[i] << ": " << value[i] << std::endl;
+    }
+	std::cout << "-------------------------" << std::endl;
+    return 0; 	
+}
+
+std::map<std::string, bool> passenger_options::commit_options = {
 
 	{"1", true},
 	{"y", true},	
