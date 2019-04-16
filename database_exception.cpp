@@ -22,5 +22,11 @@ database_exception::database_exception() noexcept
 	message_ = "NULL";
 }
 
+database_exception::database_exception(const database_exception& orig) noexcept
+{
+	code_ = orig.code_;
+	message_ = orig.message_;
+}
+
 database_exception::database_exception(const int& code, const std::string& message) noexcept :
 										code_(code), message_(message) { }

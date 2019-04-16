@@ -13,6 +13,6 @@ public:
 
 	database_exception() noexcept;
 	database_exception(const int& code, const std::string& message) noexcept;
-	database_exception(const database_exception& orig) noexcept { };
+	database_exception(const database_exception& orig) noexcept;
 	~database_exception() = default;
 };
