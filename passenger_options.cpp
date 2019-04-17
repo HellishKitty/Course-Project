@@ -149,18 +149,3 @@ int passenger_options::select_orders_callback(void* not_used, int count, char** 
 	std::cout << "-------------------------" << std::endl;
     return 0; 	
 }
-
-std::map<std::string, bool> passenger_options::commit_options = {
-
-	{"1", true},
-	{"y", true},	
-	{"yes", true},
-	{"Yes", true},
-	{"commit", true},
-	{"Commit", true},
-	{"0", false},
-	{"n", false},
-	{"N", false},
-	{"no", false},
-	{"No", false}
-};

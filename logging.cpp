@@ -1,7 +1,7 @@
 #include "logging.hpp"
+#include "connection.hpp"
 #include <iostream>
 
-user* logging_options::current_callback_data_ = nullptr;
 
 user* logging_options::sign_in()
 {
@@ -35,7 +35,7 @@ int logging_options::register_as()
 	return register_roles[reg];
 }
 
-credentials logging_options::ask_credentials()
+credentials logging_options::ask_credentials() const
 {
 	credentials credits;
 	std::cout << "Enter your name: ";
@@ -45,7 +45,7 @@ credentials logging_options::ask_credentials()
 	return credits;
 }
 
-logging_data logging_options::ask_logging_data()
+logging_data logging_options::ask_logging_data() const
 {
 	logging_data data;
 	std::cout << "Enter your login: ";
@@ -60,7 +60,7 @@ std::string logging_options::form_sign_in(const logging_data& data)
 	return "SELECT * FROM users WHERE login = '" + data.login + "' and password = '" + data.password + "'";
 }
 
-std::string logging_options::form_sign_up(const logging_data& data, const credentials& credits, const int& role)
+std::string logging_options::form_sign_up(const logging_data& data, const credentials& credits, const int& role) const
 {
 	return "INSERT INTO users (login, password, name, surname, role) " \
 		    "VALUES ('" +  data.login + "', '" + data.password + "', '" + credits.name + "', '" + credits.surname + "', " + std::to_string(role) + ")";
@@ -71,21 +71,19 @@ int logging_options::sign_in_callback(void* user_found, int count, char** value,
 {
 	logging_data data;
 	credentials credits;
-	int role;
 
 	data.login = value[0];
 	data.password = value[1];
 	credits.name = value[2];
 	credits.surname = value[3];
-	role = atoi(value[4]);
+	auto role = atoi(value[4]);
 
 	current_callback_data_ = new user(data, credits, role);
 	return 0;
 }
 
-std::map<std::string, int > logging_options::register_roles = {
-	{"1", DRIVER},
-	{"driver", DRIVER},
-	{"2", PASSENGER},
-	{"passenger", PASSENGER}
-};
+logging_options::logging_options()
+{
+	current_callback_data_ = nullptr;	
+}
+

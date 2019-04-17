@@ -300,20 +300,8 @@ int admin_options::select_callback(void* not_used, int argc, char** argv, char**
     return 0; 
 }
 
-std::map<std::string, int> admin_options::extended_role_map = {
-
-	{"0", ADMIN},
-	{"admin", ADMIN},
-	{"1", DRIVER},
-	{"driver", DRIVER},
-	{"2", PASSENGER},
-	{"passenger", PASSENGER}
-
-};
-
-std::map<std::string, bool> admin_options::bool_dictionary = {
-
-	{"1", true}, {"Y", true}, {"y", true}, {"yes", true}, {"Yes", true},
-	{"0", false}, {"N", false}, {"n", false}, {"No", false}, {"Not", false}, {"not", false}
-
-};
+admin_options::admin_options(user* log_in)
+{
+	delete log_in;
+	log_in = nullptr;
+}
