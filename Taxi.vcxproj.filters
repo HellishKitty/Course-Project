@@ -33,6 +33,12 @@
     <Filter Include="Header Files\Controller\Options">
       <UniqueIdentifier>{8cf67714-d67a-491f-ba8b-f71d26c0544f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\View">
+      <UniqueIdentifier>{19a97229-3b81-4db0-a3c7-cbfc7e169215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{2d183f83-3ae4-42af-b7ef-7819abe48998}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
