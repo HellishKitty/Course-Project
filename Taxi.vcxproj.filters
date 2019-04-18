@@ -9,10 +9,132 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Header Files\Model">
+      <UniqueIdentifier>{7bd97392-5d03-43d7-b5e0-7fff6c09955c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Model">
+      <UniqueIdentifier>{6d59040b-e7ca-40e1-8fe1-c075e9f17e7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller">
+      <UniqueIdentifier>{4932e13a-1bb2-4f03-87e9-4f0a0cfb7462}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller">
+      <UniqueIdentifier>{5117540e-eebe-4d4e-87bc-ddd52282c77c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\Database">
+      <UniqueIdentifier>{bac7acba-cc11-48e2-af9c-eaf364ce300a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\Database">
+      <UniqueIdentifier>{ce327039-ad0a-407d-9d0d-3bf96d0bb947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Controller\Options">
+      <UniqueIdentifier>{335c705f-4dd4-40f1-aa77-d3cfb7590139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Controller\Options">
+      <UniqueIdentifier>{8cf67714-d67a-491f-ba8b-f71d26c0544f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\View">
+      <UniqueIdentifier>{19a97229-3b81-4db0-a3c7-cbfc7e169215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\View">
+      <UniqueIdentifier>{2d183f83-3ae4-42af-b7ef-7819abe48998}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="order.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="user.cpp">
+      <Filter>Source Files\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="connection.cpp">
+      <Filter>Source Files\Controller\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="database_exception.cpp">
+      <Filter>Source Files\Controller\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite3.c">
+      <Filter>Source Files\Controller\Database</Filter>
+    </ClCompile>
+    <ClCompile Include="logging.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="admin.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="options_exception.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="user_options.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="passenger_options.cpp">
+      <Filter>Source Files\Controller\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="program.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="admin_UIcpp.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="passenger_UI.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="driver_UI.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="user.hpp">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="order.hpp">
+      <Filter>Header Files\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="connection.hpp">
+      <Filter>Header Files\Controller\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="database_exception.hpp">
+      <Filter>Header Files\Controller\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite3.h">
+      <Filter>Header Files\Controller\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="logging.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="admin.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="options_exception.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="user_options.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="passenger_options.hpp">
+      <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="program.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="admin_UI.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="passenger_UI.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="driver_UI.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
