@@ -26,8 +26,8 @@ public:
 	
 	std::map<std::string, int> register_roles = {
 	{"1", DRIVER},
-	{"driver", DRIVER},
+	{"водитель", DRIVER},
 	{"2", PASSENGER},
-	{"passenger", PASSENGER}
+	{"пассажир", PASSENGER}
 };
 } logging;

@@ -25,8 +25,8 @@ int program::main()
 char program::ask_logging_option() const
 {
 	std::string option;
-	std::cout << "1) Sign in || 2) Sign up || 0) Exit" << std::endl;
-	std::cout << "Input>";
+	std::cout << "1) Вход || 2) Регистрация || 0) Выход" << std::endl;
+	std::cout << "Ввод>";
 	std::getline(std::cin, option, '\n');
 	return option[0];
 }
@@ -41,19 +41,19 @@ user* program::try_prefrorm_option(char option) const
 		case '1':
 			current = logging_options_->sign_in();
 			if (current == nullptr)
-				std::cout << "No such combination of login and password!" << std::endl;
+				std::cout << "Пользователя с таким логином и паролем не существует!" << std::endl;
 			break;
 		case '2':
 			current = logging_options_->sign_up();
 			if (current == nullptr)
-				std::cout << "Login already used!" << std::endl;
+				std::cout << "Этот логин уже испольуется!" << std::endl;
 			break;
 		default:
-			std::cout << "There is no such an option! Try again." << std::endl;
+			std::cout << "Ошибка ввода! Попробуйте ещё раз." << std::endl;
 			break;
 	}
 	} catch (...) {
-		std::cout << "Unknown error occured!" << std::endl;
+		std::cout << "Возникла неизвестная ошибка!" << std::endl;
 	}
 	return current;
 }

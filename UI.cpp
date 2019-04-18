@@ -4,7 +4,7 @@
 
 void UI::wait_to_continue()
 {
-	std::cout << "Press any key to continue..." << std::endl;
+	std::cout << "Нажмите любую кнопку, чтобы продолжить..." << std::endl;
 	_getch();
 }
 

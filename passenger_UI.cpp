@@ -20,12 +20,12 @@ int passenger_UI::main()
 char passenger_UI::ask_option()
 {
 	std::string option;
-	std::cout << "1) Order taxi" << std::endl;
-	std::cout << "2) Print orders" << std::endl;
-	std::cout << "3) Edit credentials" << std::endl;
-	std::cout << "4) Change password" << std::endl;
-	std::cout << "0) Exit" << std::endl;
-	std::cout << "Input>";
+	std::cout << "1) Заказать такси" << std::endl;
+	std::cout << "2) Показать мои заказы" << std::endl;
+	std::cout << "3) Редактировать данные о себе" << std::endl;
+	std::cout << "4) Сменить пароль" << std::endl;
+	std::cout << "0) Выйти из аккаунта" << std::endl;
+	std::cout << "Ввод>";
 	std::getline(std::cin, option, '\n');
 	return option[0];
 }
@@ -51,7 +51,7 @@ void passenger_UI::try_perform_option(char option)
 		}
 	}
 	catch (...)	{
-		std::cout << "Unknown error occured!" << std::endl;
+		std::cout << "Возникла неизвестная ошибка!" << std::endl;
 	}	
 }
 

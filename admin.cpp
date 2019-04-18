@@ -15,9 +15,9 @@ void admin_options::add_user()
 credentials admin_options::ask_credentials()
 {
 	credentials credits;
-	std::cout << "Name: ";
+	std::cout << "Имя: ";
 	std::getline(std::cin, credits.name, '\n');
-	std::cout << "Surname: ";
+	std::cout << "Фамилия: ";
 	std::getline(std::cin, credits.surname, '\n');
 	return credits;
 }
@@ -25,9 +25,9 @@ credentials admin_options::ask_credentials()
 logging_data admin_options::ask_logging_data()
 {
 	logging_data data;
-	std::cout << "Login: ";
+	std::cout << "Логин: ";
 	std::getline(std::cin, data.login, '\n');
-	std::cout << "Password: ";
+	std::cout << "пароль: ";
 	std::getline(std::cin, data.password, '\n');
 	return data;
 }
@@ -37,9 +37,9 @@ int admin_options::ask_role()
 	std::string role = "null";
 	while (extended_role_map.count(role) == 0)
 	{
-		std::cout << "Enter or choose role" << std::endl;
-		std::cout << "0) Admin || 1) Driver || 2) Passenger" << std::endl;
-		std::cout << "Input> ";
+		std::cout << "Введите роль" << std::endl;
+		std::cout << "0) администратор || 1) Водитель || 2) Пассажир" << std::endl;
+		std::cout << "Ввод> ";
 		std::getline(std::cin, role, '\n');
 	}
 	return extended_role_map[role];
@@ -82,17 +82,17 @@ int admin_options::ask_how_select()
 	while (select_by == -1)
 	{
 		std::string tmp;
-		std::cout << "1) Select by credits and role" << std::endl;
-		std::cout << "2) Select by credits" << std::endl;
-		std::cout << "3) select by role" << std::endl;
-		std::cout << "0) select all" << std::endl;
-		std::cout << "Input> ";
+		std::cout << "1) Отбирать по личным данным и роли" << std::endl;
+		std::cout << "2) Отбирать по личным данным" << std::endl;
+		std::cout << "3) Отбирать по роли" << std::endl;
+		std::cout << "0) Выбрать всех" << std::endl;
+		std::cout << "Ввод> ";
 		std::getline(std::cin, tmp, '\n');
 		try	{
 			select_by = std::stoi(tmp);
 		}
 		catch (std::invalid_argument& e) {
-			std::cout << "Input error! Try again!";
+			std::cout << "Ошибка ввода! Попробуйте ещё раз.";
 		}
 	}
 	return select_by;	
@@ -111,11 +111,11 @@ void admin_options::delete_user()
 bool admin_options::ask_to_continue()
 {
 	std::string continue_ = "null";
-	std::cout << "Warning! This is a destructive operation!" << std::endl;
+	std::cout << "Осторожно! Эта операция не может быть отменена" << std::endl;
 	while (bool_dictionary.count(continue_) == 0) 
 	{
-		std::cout << "Do you want to continue?" << std::endl;
-		std::cout << "Input> ";
+		std::cout << "Хотите продолжить?" << std::endl;
+		std::cout << "Ввод> ";
 		std::getline(std::cin, continue_, '\n');
 	}
 	return bool_dictionary[continue_];
@@ -155,7 +155,7 @@ std::string admin_options::get_update_SQLtext()
 			break;
 					
 		default:
-			std::cout << "Input error! Try again" << std::endl;
+			std::cout << "Ошибка ввода! Поробуйте ещё раз." << std::endl;
 			break;
 		}
 	}
@@ -168,17 +168,17 @@ int admin_options::ask_what_update()
 	while (update == -1)
 	{
 		std::string tmp;
-		std::cout << "1) Update name" << std::endl;
-		std::cout << "2) Update surname" << std::endl;
-		std::cout << "3) Update login" << std::endl;
-		std::cout << "4) Update password" << std::endl;
-		std::cout << "Input> ";
+		std::cout << "1) Редактировать имя" << std::endl;
+		std::cout << "2) Редактировать фамилию" << std::endl;
+		std::cout << "3) Сменить логин" << std::endl;
+		std::cout << "4) Сменить пароль" << std::endl;
+		std::cout << "Ввод> ";
 		std::getline(std::cin, tmp, '\n');
 		try	{
 			update = std::stoi(tmp);
 		}
 		catch (std::invalid_argument& e) {
-			std::cout << "Input error! Try again!";
+			std::cout << "Ошибка ввода! Поробуйте ещё раз.";
 		}
 	}
 	return update;	
@@ -187,7 +187,7 @@ int admin_options::ask_what_update()
 std::string admin_options::ask_value(const std::string& column)
 {
 	std::string value;
-	std::cout << "Set new value for " << column << ": ";
+	std::cout << "Задайте новое значение " << column << ": ";
 	std::getline(std::cin, value, '\n');
 	return value;
 }
@@ -195,7 +195,7 @@ std::string admin_options::ask_value(const std::string& column)
 std::string admin_options::ask_login()
 {
 	std::string login;
-	std::cout << "Enter user's login: ";
+	std::cout << "введите логин пользователя: ";
 	std::getline(std::cin, login, '\n');
 	return login;
 }
@@ -206,6 +206,7 @@ void admin_options::write_request()
 		return;
 
 	std::string req;
+	std::cout << "Текст запроса: ";
 	std::getline(std::cin, req, '\n');
 	connection conn("Taxi.sqlite3");
 	conn.execute(req);
@@ -235,7 +236,7 @@ std::string admin_options::load_from_file()
 std::string admin_options::ask_file_name()
 {
 	std::string file_name;
-	std::cout << "Enter filename: ";
+	std::cout << "Полное имя файла: ";
 	std::getline(std::cin, file_name, '\n');
 	return file_name;
 }
@@ -243,12 +244,12 @@ std::string admin_options::ask_file_name()
 bool admin_options::ask_to_continue_unsafe()
 {
 	std::string continue_ = "null";
-	std::cout << "Warning! Those SQL requests are not parsed by client!" << std::endl;
-	std::cout << "Executing them may cause unexpected results!" << std::endl;
+	std::cout << "Внимание! Правильность команд не регулироется программой!" << std::endl;
+	std::cout << "Выполнение направильно сформированного запроса может привести к неожиданнм результатам" << std::endl;
 	while (bool_dictionary.count(continue_) == 0) 
 	{
-		std::cout << "Do you want to continue?" << std::endl;
-		std::cout << "Input> ";
+		std::cout << "Желаете продолжить?" << std::endl;
+		std::cout << "Ввод> ";
 		std::getline(std::cin, continue_, '\n');
 	}
 	return bool_dictionary[continue_];

@@ -25,9 +25,9 @@ void passenger_options::order_taxi()
 order_info passenger_options::ask_order_info()
 {
 	order_info order;
-	std::cout << "Enter address: ";
+	std::cout << "Введите ваш адрес: ";
 	std::getline(std::cin, order.from_address, '\n');
-	std::cout << "Enter where to go: ";
+	std::cout << "введите адрес прибытия: ";
 	std::getline(std::cin, order.to_address, '\n');
 	return order;
 }
@@ -46,7 +46,7 @@ bool passenger_options::ask_commit(const order_info& info, const user& driver)
 	std::string commit = "null";
 	print_order_info(info, driver);
 	while (commit_options.count(commit) == 0) {
-		std::cout << "1) Commit || 0) Decline\nInput> ";
+		std::cout << "1) Подтвердить поездку || 0) Отменить поездку\nInput> ";
 		std::getline(std::cin, commit, '\n');
 	}
 	return commit_options[commit];
@@ -66,8 +66,8 @@ void passenger_options::insert(const std::string& SQLtext)
 
 void passenger_options::print_order_info(const order_info& info, const user& driver)
 {
-	std::cout << "From " << info.from_address << " to " << info.to_address << std::endl;
-	std::cout << "Cost: " << info.cost << ", driver " << driver.get_credential() << std::endl;
+	std::cout << "Из " << info.from_address << " к " << info.to_address << std::endl;
+	std::cout << "Цена: " << info.cost << ", водитель " << driver.get_credential() << std::endl;
 }
 
 void passenger_options::print_drivers_found()
@@ -81,13 +81,13 @@ user passenger_options::pick_driver()
 	while (true)
 	{
 		try {
-			std::cout << "Pick driver: ";
+			std::cout << "Выберите водителя: ";
 			std::getline(std::cin, pick, '\n');
 			return callback_drivers_.at(std::stoi(pick) - 1);
 		} catch (std::invalid_argument& e)	{
-			std::cout << "Input error! Try again, please." << std::endl;
+			std::cout << "Ошибка ввода! Попробуйте ещё раз." << std::endl;
 		} catch (std::out_of_range& e) {
-			std::cout << "Index given is out of range! Try again, please." << std::endl;
+			std::cout << "Выбран неправильный номер! Попроубуйте ещё раз." << std::endl;
 		}
 	}	
 }

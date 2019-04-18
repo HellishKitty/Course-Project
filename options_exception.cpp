@@ -3,12 +3,12 @@
 
 char const* options_exception::what() const
 {
-	return "Unknown error occured!";	
+	return "Возникла неизвестная ошибка!";	
 }
 
 char const* bad_order_id::what() const
 {
-	return "Cant generate order ID!";	
+	return "Невозможно сформировать заказ!";	
 }
 
 bad_file::bad_file(const std::string& filename) noexcept :
@@ -19,10 +19,10 @@ bad_file::bad_file(const bad_file& orig) noexcept :
 
 char const* bad_file::what() const
 {
-	return "Can't open file!";
+	return "Невозможно окрыть файл!";
 }
 
 std::string bad_file::error() const noexcept
 {
-	return "Can't open file: " + filename_;	
+	return "невозможно открыть файл " + filename_;	
 }

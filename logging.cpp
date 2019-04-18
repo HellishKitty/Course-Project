@@ -29,8 +29,8 @@ int logging_options::register_as()
 	std::string reg = "null";
 	while (register_roles.count(reg) == 0)
 	{
-		std::cout << "1) register as driver || 2) register as passenger" << std::endl;
-		std::cout << "Input> ";
+		std::cout << "1) Зарегистрироваться как водитель || 2) Зарегистрироваться как пассажир" << std::endl;
+		std::cout << "Ввод> ";
 		std::getline(std::cin, reg, '\n');
 	}
 	return register_roles[reg];
@@ -39,9 +39,9 @@ int logging_options::register_as()
 credentials logging_options::ask_credentials() const
 {
 	credentials credits;
-	std::cout << "Enter your name: ";
+	std::cout << "Введите ваше имя: ";
 	std::getline(std::cin, credits.name, '\n');
-	std::cout << "Enter your surname: ";
+	std::cout << "Введите вашу фамилию: ";
 	std::getline(std::cin, credits.surname, '\n');
 	return credits;
 }
@@ -49,9 +49,9 @@ credentials logging_options::ask_credentials() const
 logging_data logging_options::ask_logging_data() const
 {
 	logging_data data;
-	std::cout << "Enter your login: ";
+	std::cout << "Введите логин: ";
 	std::getline(std::cin, data.login, '\n');
-	std::cout << "Enter your password: ";
+	std::cout << "Введите пароль: ";
 	std::getline(std::cin, data.password, '\n');
 	return data;
 }

@@ -15,9 +15,9 @@ void user_options::edit_credentials()
 credentials user_options::ask_new_credentials() const
 {
 	credentials credits;
-	std::cout << "Enter name: ";
+	std::cout << "¬ведите им€: ";
 	std::getline(std::cin, credits.name, '\n');
-	std::cout << "Enter surname: ";
+	std::cout << "введите фамилию: ";
 	std::getline(std::cin, credits.surname, '\n');
 	return credits;
 }
@@ -38,7 +38,7 @@ void user_options::update(const std::string& SQLtext)
 std::string user_options::ask_new_password() const
 {
 	std::string password;
-	std::cout << "Enter new password: ";
+	std::cout << "¬ведите пароль: ";
 	std::getline(std::cin, password, '\n');
 	return password;
 }

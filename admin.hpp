@@ -54,16 +54,16 @@ public:
 	std::map<std::string, int> extended_role_map = {
 
 		{"0", ADMIN},
-		{"admin", ADMIN},
+		{"администратор", ADMIN},
 		{"1", DRIVER},
-		{"driver", DRIVER},
+		{"водитель", DRIVER},
 		{"2", PASSENGER},
-		{"passenger", PASSENGER}
+		{"пассажир", PASSENGER}
 	};
 
 	std::map<std::string, bool> bool_dictionary = {
 
-		{"1", true}, {"Y", true}, {"y", true}, {"yes", true}, {"Yes", true},
-		{"0", false}, {"N", false}, {"n", false}, {"No", false}, {"Not", false}, {"not", false}
+		{"1", true}, {"Да", true}, {"да", true}, {"Подтвердить", true}, {"подтвердить", true},
+		{"0", false}, {"Нет", false}, {"нет", false}, {"Отменить", false}, {"отменить", false}
 	};
 } admin;
