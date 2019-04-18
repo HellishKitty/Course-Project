@@ -3,13 +3,15 @@
 #include "order.hpp"
 
 
-typedef class passenger_options final : user_options
+typedef class passenger_options final : public user_options
 {
 	static int max_ID_;
 	static std::vector<user> callback_drivers_;
 public:
-	void order_taxi(const std::string& login);
+	void order_taxi();
 	void print_orders();
+	std::function<void()> order_taxi_f = std::bind(&passenger_options::order_taxi, this);
+	std::function<void()> print_orders_f = std::bind(&passenger_options::print_orders, this);
 private:
 	order_info ask_order_info();
 	user select_driver();

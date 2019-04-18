@@ -1,5 +1,6 @@
 #pragma once
 #include "user.hpp"
+#include <functional>
 
 
 typedef class logging_options final
@@ -7,6 +8,8 @@ typedef class logging_options final
 public:	
 	user* sign_in();
 	user* sign_up();
+	std::function<user*()> sign_in_f = std::bind(&logging_options::sign_in, this);
+	std::function<user*()> sign_up_f = std::bind(&logging_options::sign_up, this);
 private:
 	int register_as();
 	credentials ask_credentials() const;

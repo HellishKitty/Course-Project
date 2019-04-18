@@ -1,5 +1,6 @@
 #pragma once
 #include "user.hpp"
+#include <functional>
 
 
 typedef class user_options
@@ -9,6 +10,8 @@ protected:
 public:	
 	void edit_credentials();
 	void change_password();	
+	std::function<void()> edit_credentials_f = std::bind(&user_options::edit_credentials, this);
+	std::function<void()> change_password_f = std::bind(&user_options::change_password, this);
 protected:	
 	credentials ask_new_credentials() const;
 	void update(const std::string& SQLtext);

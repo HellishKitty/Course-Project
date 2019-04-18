@@ -2,6 +2,7 @@
 #include "connection.hpp"
 #include <iostream>
 
+user* logging_options::current_callback_data_ = nullptr;
 
 user* logging_options::sign_in()
 {

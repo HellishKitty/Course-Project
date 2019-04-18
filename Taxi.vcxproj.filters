@@ -74,6 +74,21 @@
     <ClCompile Include="passenger_options.cpp">
       <Filter>Source Files\Controller\Options</Filter>
     </ClCompile>
+    <ClCompile Include="program.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="admin_UIcpp.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="passenger_UI.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="driver_UI.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="user.hpp">
@@ -105,6 +120,21 @@
     </ClInclude>
     <ClInclude Include="passenger_options.hpp">
       <Filter>Header Files\Controller\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="program.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="admin_UI.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="passenger_UI.hpp">
+      <Filter>Header Files\View</Filter>
+    </ClInclude>
+    <ClInclude Include="driver_UI.hpp">
+      <Filter>Header Files\View</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

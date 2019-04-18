@@ -300,8 +300,8 @@ int admin_options::select_callback(void* not_used, int argc, char** argv, char**
     return 0; 
 }
 
-admin_options::admin_options(user* log_in)
+admin_options::admin_options(user* current) : current_(*current)
 {
-	delete log_in;
-	log_in = nullptr;
+	delete current;
+	current = nullptr;
 }

@@ -124,12 +124,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="admin.cpp" />
+    <ClCompile Include="admin_UIcpp.cpp" />
     <ClCompile Include="connection.cpp" />
     <ClCompile Include="database_exception.cpp" />
+    <ClCompile Include="driver_UI.cpp" />
     <ClCompile Include="logging.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="order.cpp" />
     <ClCompile Include="passenger_options.cpp" />
+    <ClCompile Include="passenger_UI.cpp" />
+    <ClCompile Include="program.cpp" />
+    <ClCompile Include="UI.cpp" />
     <ClCompile Include="user_options.cpp" />
     <ClCompile Include="options_exception.cpp" />
     <ClCompile Include="sqlite3.c" />
@@ -137,11 +142,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="admin.hpp" />
+    <ClInclude Include="admin_UI.hpp" />
     <ClInclude Include="connection.hpp" />
     <ClInclude Include="database_exception.hpp" />
+    <ClInclude Include="driver_UI.hpp" />
     <ClInclude Include="logging.hpp" />
     <ClInclude Include="order.hpp" />
     <ClInclude Include="passenger_options.hpp" />
+    <ClInclude Include="passenger_UI.hpp" />
+    <ClInclude Include="program.hpp" />
+    <ClInclude Include="UI.hpp" />
     <ClInclude Include="user_options.hpp" />
     <ClInclude Include="options_exception.hpp" />
     <ClInclude Include="sqlite3.h" />

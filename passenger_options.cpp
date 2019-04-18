@@ -7,7 +7,7 @@
 int passenger_options::max_ID_ = 0;
 std::vector<user> passenger_options::callback_drivers_;
 
-void passenger_options::order_taxi(const std::string& login)
+void passenger_options::order_taxi()
 {
 	auto order = ask_order_info();
 	auto driver = select_driver();
@@ -17,7 +17,7 @@ void passenger_options::order_taxi(const std::string& login)
 		order.status = COMPLETED;
 	else
 		order.status = DECLINED;
-	auto SQLtext = form_commit(order, driver.get_credential().name, login);
+	auto SQLtext = form_commit(order, driver.get_credential().name, current_user_.get_login());
 	insert(SQLtext);
 	callback_drivers_.clear();
 }
@@ -50,6 +50,12 @@ bool passenger_options::ask_commit(const order_info& info, const user& driver)
 		std::getline(std::cin, commit, '\n');
 	}
 	return commit_options[commit];
+}
+
+void passenger_options::print_orders()
+{
+	connection conn("Taxi.sqlite3");
+	conn.execute("SELECT * FROM orders WHERE plogin = '" + current_user_.get_login() + "'", nullptr, select_orders_callback);
 }
 
 void passenger_options::insert(const std::string& SQLtext)
@@ -148,4 +154,9 @@ int passenger_options::select_orders_callback(void* not_used, int count, char** 
     }
 	std::cout << "-------------------------" << std::endl;
     return 0; 	
+}
+
+passenger_options::passenger_options(user* current) : user_options(current)
+{
+	
 }
