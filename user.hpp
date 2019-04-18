@@ -37,6 +37,7 @@ public:
 
 	credentials get_credential() const { return credentials_; }
 	std::string get_login() const { return logging_.login; }
+	int get_role() const { return role_; }
 	void set_orders(std::vector<std::shared_ptr<order>>& orders) { orders_ = orders; }
 	void print_orders();
 
